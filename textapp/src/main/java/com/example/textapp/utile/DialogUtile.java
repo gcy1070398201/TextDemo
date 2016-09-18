@@ -1,4 +1,4 @@
-package com.example.textapp;
+package com.example.textapp.utile;
 
 import android.app.ProgressDialog;
 import android.content.Context;

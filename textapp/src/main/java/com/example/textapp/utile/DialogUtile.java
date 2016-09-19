@@ -29,6 +29,4 @@ public class DialogUtile {
             mProgressDialog.cancel();
         }
     }
-
-
 }

@@ -5,12 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.textapp.api.BaseApi;
-import com.example.textapp.api.TextSubscriber;
-import com.example.textapp.bean.Good;
 import com.example.textapp.mvp.p.BaseP;
 import com.example.textapp.mvp.v.V;
-
-import rx.Subscriber;
 
 public class MainActivity extends AppCompatActivity implements V.MainInfo {
 
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements V.MainInfo {
     }
 
     private void initAnmin() {
-        BaseApi.getInstence().toSubscribe(BaseApi.getInstence().getApi().getGoodInfo(),mBaseP);
+        mBaseP.sendNetWork(BaseApi.getInstence().getApi().getGoodInfo(),mBaseP);
     }
     @Override
     protected void onDestroy() {

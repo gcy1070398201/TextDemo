@@ -17,7 +17,6 @@ public class BaseViewP<T> extends Subscriber {
     public void onStart() {
         super.onStart();
     }
-
     @Override
     public void onCompleted() {
 

@@ -1,11 +1,10 @@
 package com.example.textapp.api;
 
-import com.example.textapp.mvp.p.BaseP;
-
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
+import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
@@ -36,7 +35,7 @@ public class BaseApi<T> {
                 .build();
         return mRetrofit.create(Api.class);
     }
-    public void toSubscribe(Observable o, final BaseP ss){
+    public void toSubscribe(Observable o, Subscriber<?>ss){
         o.subscribeOn(Schedulers.io())
                 .observeOn(Schedulers.newThread())
                 .subscribe(ss);

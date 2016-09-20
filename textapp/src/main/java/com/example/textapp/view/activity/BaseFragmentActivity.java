@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
 /**
  * Created by CTXD-24 on 2016/9/20.
@@ -38,6 +39,14 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
      *初次加载网络状况
      */
     protected abstract void seedNetWork();
+    /**
+     * 简化获取组件Id
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public  <T extends View> T getViewId(int id) {
+        return (T) super.findViewById(id);
+    }
     /**
      * 简单跳转
      * @param cl

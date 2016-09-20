@@ -50,6 +50,14 @@ public abstract class BaseFragment extends Fragment {
      */
     protected abstract void seedNetWork();
     /**
+     * 简化获取组件Id
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public  <T extends View> T getViewId(int id) {
+        return (T) super.getActivity().findViewById(id);
+    }
+    /**
      * 简单跳转
      * @param cl
      */

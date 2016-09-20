@@ -19,6 +19,9 @@ public class DialogUtile {
     }
 
     public void showDialog(){
+        if (mProgressDialog!=null){
+            return;
+        }
         mProgressDialog=new ProgressDialog(mContext);
         mProgressDialog.setTitle("等待");
         mProgressDialog.setMessage("正在加载....");
